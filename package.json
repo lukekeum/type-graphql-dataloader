@@ -30,6 +30,7 @@
     "prepublishOnly": "npm run-script clean && npm run-script build"
   },
   "dependencies": {
+    "apollo-server-core": "^3.11.1",
     "dataloader": "^2.0.0",
     "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13",
