@@ -1,5 +1,5 @@
 import type { TgdContext } from "#/types/TgdContext";
-import type { ApolloServerPlugin } from "apollo-server-plugin-base";
+import type { PluginDefinition } from "apollo-server-core";
 import type { BaseContext } from "apollo-server-types";
 import { Container } from "typedi";
 import type { Connection } from "typeorm";
@@ -11,7 +11,7 @@ interface ApolloServerLoaderPluginOption {
 
 const ApolloServerLoaderPlugin = (
   option?: ApolloServerLoaderPluginOption
-): ApolloServerPlugin => ({
+): PluginDefinition => ({
   requestDidStart: async () => ({
     async didResolveSource(requestContext: { context: BaseContext }) {
       Object.assign(requestContext.context, {
